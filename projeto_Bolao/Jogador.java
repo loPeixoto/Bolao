@@ -9,6 +9,7 @@ public class Jogador extends Pessoa {
         super();
         Scanner s = new Scanner(System.in);
 
+        System.out.printf("Digite o cpf: ");
         this.pix = s.nextLine();
         
     }
