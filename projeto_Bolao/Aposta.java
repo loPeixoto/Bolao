@@ -7,6 +7,12 @@ public class Aposta {
     private Jogador organizador;
     private ArrayList<Jogador> jogadores;
 
+
+    public Aposta(ArrayList<Integer> numeros, Jogador organizador, ArrayList<Jogador> jogadores){
+        numeros = new ArrayList<Integer>();
+        jogadores = new ArrayList<Jogador>();
+    }
+
     public boolean vencedora(ArrayList<Integer> sorteados) {
         return true;
     }
