@@ -9,9 +9,11 @@ public class Jogador extends Pessoa {
         super();
         Scanner s = new Scanner(System.in);
 
-        s.nextLine();
         this.pix = s.nextLine();
         
     }
-    
+
+    public void listarDados(){
+
+    }    
 }
