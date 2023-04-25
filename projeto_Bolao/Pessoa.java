@@ -9,12 +9,8 @@ public class Pessoa {
     public Pessoa() {
         Scanner r = new Scanner(System.in);
 
-        r.nextLine();
-
         System.out.println("Digite o nome:\n");
         this.nome = r.nextLine();
-
-        r.nextLine();
 
         System.out.println("Digite o CPF: \n");
         this.cpf = r.nextLine();
