@@ -10,6 +10,8 @@ public class Aposta {
 
     public Aposta(ArrayList<Integer> numeros, Jogador organizador, ArrayList<Jogador> jogadores){
         numeros = new ArrayList<Integer>();
+        organizador = new Jogador();
+        // nao inicializei o organizador
         jogadores = new ArrayList<Jogador>();
     }
 
