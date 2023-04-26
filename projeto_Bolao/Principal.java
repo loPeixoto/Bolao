@@ -8,7 +8,7 @@ public class Principal {
         Bolao bolao1 = new Bolao();
 
         int opcao = Menu.imprimeMenu();
-        while (opcao != 0 ){
+        while (opcao != 4 ){
 
             if ( opcao == 1){
                 bolao1.cadastrarJogadores();

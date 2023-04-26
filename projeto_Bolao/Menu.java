@@ -17,8 +17,8 @@ public class Menu {
         System.out.println("Escolha uma das opcoes");
         System.out.println("1) Cadastrar jogador");
         System.out.println("2) Cadastrar aposta");
-        System.out.println("2) Inserir sorteio e listar vencedores");
-        System.out.println("0) Sair");
+        System.out.println("3) Inserir sorteio e listar vencedores");
+        System.out.println("4) Sair");
         System.out.printf("Digite aqui: ");
         return lerOpcao();
     }
