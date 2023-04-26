@@ -50,15 +50,17 @@ public class Aposta {
     }
 
     public void inserirNumeros() {
-        int cont, aux, q;
-        cont = 0;
+        int cont = 1 , aux, q;
+
         Scanner ler = new Scanner(System.in);
         System.out.println("***  Digite a quantidade de números da aposta ***");
+        // precisa de validação pra ser no minimo 6 e no maximo 8
         q = ler.nextInt();
 
         this.numeros = new ArrayList<Integer>();
 
         while(numeros.size() <= q) {
+            System.out.println(" Digite o " + cont + "numero da aposta");
             aux = ler.nextInt();
             if(aux <= 0 || aux > 60) {
                 System.out.println("Erro: digite um número válido de 1 a 60");
