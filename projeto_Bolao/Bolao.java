@@ -45,21 +45,30 @@ public class Bolao{
         return ApostasVencedoras;
     }
 
-    public void inserirSorteio(){
-        // a pessoa digita os numeros sorteados
-        ArrayList<Integer> NumSorteados = new ArrayList<Integer>();
-        Scanner n = new Scanner(System.in);
-        int num = n.nextInt();
+    public void inserirSorteio() {
+        int aux= 1;
+        int i = 0;
+        double premio;
+        
+        ArrayList<Integer> numSorteados = new ArrayList<Integer>();
+        Scanner r = new Scanner(System.in);
 
 
-        int i = 1;
-        while ( i <= 6){
-            System.out.println(" Digite o " + i + "¨ sorteado: ");
+        while(numSorteados.size() < 7) {
 
-            if ( num < 1 || num > 60){
-
+            System.out.println(" Digite o " + i + "o sorteado: ");
+           
+            if(aux <= 0 || aux > 60) {
+                System.out.println("Erro: digite um número válido de 1 a 60");
+            }else {
+                aux = r.nextInt();
+                numSorteados.add(aux);
+                i++;
             }
         }
-    }
-    
+
+        System.out.println("Digite qual será o valor da premiação");
+        premio = r.nextDouble();
+
+    }
 }

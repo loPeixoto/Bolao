@@ -15,6 +15,8 @@ public class Aposta {
         // nao inicializei o organizador
         this.jogadores = new ArrayList<Jogador>();
     }
+    
+
 
     public boolean vencedora(ArrayList<Integer> NumApostados) {
         int i = 0;
@@ -118,5 +120,4 @@ public class Aposta {
         }
         System.out.println(" jogadores cadastrados ");
     }
-
 }
