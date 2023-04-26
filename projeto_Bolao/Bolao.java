@@ -17,8 +17,9 @@ public class Bolao{
         this.jogadores.add(j);
     }
 
-    public void criarAposta() {
+    public void cadastrarAposta() {
         
+
     }
 
     
