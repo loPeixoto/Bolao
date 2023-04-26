@@ -13,7 +13,8 @@ public class Bolao{
     }
 
     public void cadastrarJogadores() {
-
+        Jogador j = new Jogador();
+        this.jogadores.add(j);
     }
 
     
