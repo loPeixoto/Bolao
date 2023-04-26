@@ -13,6 +13,7 @@ public class Bolao{
     }
 
     public void cadastrarJogadores() {
+        System.out.println("Digite os dados do jogador");
         Jogador j = new Jogador();
         this.jogadores.add(j);
     }
