@@ -78,15 +78,19 @@ public class Aposta {
             for( Jogador jogador : jogadores){ // lista os dados de todos os jogadores
                 jogador.listarDados(); 
             }
-        
+            
             System.out.println("* Informe o CPF do jogador*");
-            linha = ler.nextLine();
+            linha = ler.nextLine(); // le o cpf do jogador
+
             for( Jogador jogador : jogadores){ 
                 if (linha.equals(jogador.cpf)){ // verifica se o cpf digitado é igual a algum cpf já cadastrado
                     this.jogadores.add(jogador);
                 }
             }
+
+       
         }
+        System.out.println(" jogadores cadastrados ");
     }
 
 }
