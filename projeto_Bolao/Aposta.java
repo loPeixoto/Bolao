@@ -16,8 +16,31 @@ public class Aposta {
         this.jogadores = new ArrayList<Jogador>();
     }
 
-    public boolean vencedora(ArrayList<Integer> sorteados) {
-        return true;
+    public boolean vencedora(ArrayList<Integer> NumApostados) {
+        int i = 0;
+
+        for(Integer numSorteado : NumApostados){ 
+            if (verificaNumeros(numSorteado)){ 
+                i++;
+            }
+        }
+
+        if ( i >= 6){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean verificaNumeros(int numero){
+       
+
+        for (int num : this.getNumeros()){
+            if (num == numero){
+                return true;
+            }
+        }
+        return false;
     }
     
     public void listarVencedores (double premio){
@@ -45,6 +68,10 @@ public class Aposta {
             }
 
         }
+    }
+
+    public ArrayList<Integer> getNumeros(){
+        return this.numeros;
     }
 
     public void inserirOrganizador( ArrayList<Jogador> j){
