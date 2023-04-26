@@ -45,9 +45,25 @@ public class Aposta {
             }
 
         }
+    }
 
+    public void inserirOrganizador( ArrayList<Jogador> j){
+        String i;
 
+        for( Jogador jogador : j){ // lista os dados de todos os jogadores
+            jogador.listarDados(); 
+        }
 
+        Scanner ler = new Scanner(System.in);
+        System.out.println("* Digite o cpf do jogador que sera o organizador da aposta *");
+        i = ler.nextLine();
 
+        for( Jogador jogador : j){ 
+            if (i.equals(jogador.cpf)){ // verifica se o cpf digitado é igual a algum cpf já cadastrado
+                organizador.cpf = jogador.cpf;
+                organizador.nome = jogador.nome;
+                organizador.pix = jogador.pix;
+            }
+        }
     }
 }
