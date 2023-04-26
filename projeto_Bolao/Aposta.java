@@ -66,4 +66,27 @@ public class Aposta {
             }
         }
     }
+
+    public void inserirJogadores(){
+        int j;
+        String linha;
+        Scanner ler = new Scanner(System.in);
+        System.out.println("* Digite o numero de jogadores do bilhete (sem contar o organizador) *");
+        j = ler.nextInt();
+
+        for (int i = 1; i <= j; i++) {
+            for( Jogador jogador : jogadores){ // lista os dados de todos os jogadores
+                jogador.listarDados(); 
+            }
+        
+            System.out.println("* Informe o CPF do jogador*");
+            linha = ler.nextLine();
+            for( Jogador jogador : jogadores){ 
+                if (linha.equals(jogador.cpf)){ // verifica se o cpf digitado é igual a algum cpf já cadastrado
+                    
+                }
+            }
+        }
+    }
+
 }
