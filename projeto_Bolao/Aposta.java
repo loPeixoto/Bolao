@@ -62,8 +62,6 @@ public class Aposta {
             aux = ler.nextInt();
             if(aux <= 0 || aux > 60) {
                 System.out.println("Erro: digite um número válido de 1 a 60");
-            }else if(!this.numeros.contains(aux)) {
-                System.out.println("Erro: não pode repetir número");
             }else {
                 this.numeros.add(aux);
                 cont ++;
