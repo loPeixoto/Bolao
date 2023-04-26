@@ -49,8 +49,10 @@ public class Bolao{
         int aux= 1;
         int i = 0;
         double premio;
+        double divisaoPremio;
         
         ArrayList<Integer> numSorteados = new ArrayList<Integer>();
+        ArrayList<Aposta> apostasVencedoras = new ArrayList<Aposta>();
         Scanner r = new Scanner(System.in);
 
 
@@ -69,6 +71,14 @@ public class Bolao{
 
         System.out.println("Digite qual será o valor da premiação");
         premio = r.nextDouble();
+
+        apostasVencedoras = vencedoras(numSorteados);
+
+        divisaoPremio = premio/apostasVencedoras.size();
+
+        
+
+
 
     }
 }
