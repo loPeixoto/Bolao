@@ -17,7 +17,7 @@ public class Principal {
                 bolao1.cadastrarAposta();
             }
             if ( opcao == 3){
-                // ainda nao foi feito
+                bolao1.inserirSorteio();
             }
             opcao = Menu.imprimeMenu();
         }
