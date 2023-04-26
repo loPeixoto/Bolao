@@ -9,7 +9,7 @@ public class Aposta {
     private ArrayList<Jogador> jogadores;
 
 
-    public Aposta(ArrayList<Integer> numeros, Jogador organizador, ArrayList<Jogador> jogadores){
+    public Aposta(){
         this.numeros = new ArrayList<Integer>();
         this.organizador = new Jogador();
         // nao inicializei o organizador
