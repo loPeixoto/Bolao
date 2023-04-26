@@ -19,8 +19,10 @@ public class Bolao{
     }
 
     public void cadastrarAposta() {
-        
-
+        Aposta aposta1 = new Aposta();
+        aposta1.inserirJogadores();
+        aposta1.inserirNumeros();
+        System.out.println("Aposta criada");
     }
 
     
