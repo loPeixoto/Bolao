@@ -83,7 +83,7 @@ public class Aposta {
             linha = ler.nextLine();
             for( Jogador jogador : jogadores){ 
                 if (linha.equals(jogador.cpf)){ // verifica se o cpf digitado é igual a algum cpf já cadastrado
-                    
+                    this.jogadores.add(jogador);
                 }
             }
         }
