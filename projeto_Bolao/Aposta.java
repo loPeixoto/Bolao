@@ -10,10 +10,10 @@ public class Aposta {
 
 
     public Aposta(ArrayList<Integer> numeros, Jogador organizador, ArrayList<Jogador> jogadores){
-        numeros = new ArrayList<Integer>();
-        organizador = new Jogador();
+        this.numeros = new ArrayList<Integer>();
+        this.organizador = new Jogador();
         // nao inicializei o organizador
-        jogadores = new ArrayList<Jogador>();
+        this.jogadores = new ArrayList<Jogador>();
     }
 
     public boolean vencedora(ArrayList<Integer> sorteados) {
@@ -60,11 +60,12 @@ public class Aposta {
 
         for( Jogador jogador : j){ 
             if (i.equals(jogador.cpf)){ // verifica se o cpf digitado é igual a algum cpf já cadastrado
-                organizador.cpf = jogador.cpf;
-                organizador.nome = jogador.nome;
-                organizador.pix = jogador.pix;
+                this.organizador = jogador;
             }
         }
+
+        // falta verificar se o cpf é valido e oq vai fazer se nao 
+        // achar algum cpf na lista
     }
 
     public void inserirJogadores(){
@@ -87,8 +88,6 @@ public class Aposta {
                     this.jogadores.add(jogador);
                 }
             }
-
-       
         }
         System.out.println(" jogadores cadastrados ");
     }
