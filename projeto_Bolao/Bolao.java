@@ -1,6 +1,7 @@
 package projeto_Bolao;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Bolao{
 
@@ -10,6 +11,10 @@ public class Bolao{
     public Bolao() {
         this.apostas = new ArrayList<Aposta>();
         this.jogadores = new ArrayList<Jogador>();
+    }
+
+    public ArrayList<Aposta> getAposta(){
+        return this.apostas;
     }
 
     public void cadastrarJogadores() {
@@ -25,5 +30,36 @@ public class Bolao{
         System.out.println("Aposta criada");
     }
 
+
+    private ArrayList<Aposta> vencedoras(ArrayList<Integer> NumSorteados){
+        // Recebe os numeros sorteados
+
+        ArrayList<Aposta> ApostasVencedoras = new ArrayList<Aposta>();
+        for (Aposta apostas : this.getAposta()){
+            if(apostas.vencedora(NumSorteados)){
+                ApostasVencedoras.add(apostas);
+            }
+        }
+        // compara os numeros sorteados com cada aposta existente
+        // retorna as apostas premiadas
+        return ApostasVencedoras;
+    }
+
+    public void inserirSorteio(){
+        // a pessoa digita os numeros sorteados
+        ArrayList<Integer> NumSorteados = new ArrayList<Integer>();
+        Scanner n = new Scanner(System.in);
+        int num = n.nextInt();
+
+
+        int i = 1;
+        while ( i <= 6){
+            System.out.println(" Digite o " + i + "¨ sorteado: ");
+
+            if ( num < 1 || num > 60){
+
+            }
+        }
+    }
     
 }
