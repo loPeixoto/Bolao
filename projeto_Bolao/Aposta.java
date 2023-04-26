@@ -53,7 +53,7 @@ public class Aposta {
         int cont, aux, q;
         cont = 0;
         Scanner ler = new Scanner(System.in);
-        System.out.println("*** Digite a quantidade de números da aposta ***");
+        System.out.println("***  Digite a quantidade de números da aposta ***");
         q = ler.nextInt();
 
         this.numeros = new ArrayList<Integer>();
@@ -84,7 +84,7 @@ public class Aposta {
         }
 
         Scanner ler = new Scanner(System.in);
-        System.out.println("* Digite o cpf do jogador que sera o organizador da aposta *");
+        System.out.println("*inserirOrganizador Digite o cpf do jogador que sera o organizador da aposta *");
         i = ler.nextLine();
 
         for( Jogador jogador : j){ 
@@ -101,7 +101,7 @@ public class Aposta {
         int j;
         String linha;
         Scanner ler = new Scanner(System.in);
-        System.out.println("* Digite o numero de jogadores do bilhete (sem contar o organizador) *");
+        System.out.println("* inserir Jogadores : Digite o numero de jogadores do bilhete (sem contar o organizador) *");
         j = ler.nextInt();
 
         for (int i = 1; i <= j; i++) {
