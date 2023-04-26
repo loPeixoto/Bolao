@@ -109,8 +109,9 @@ public class Aposta {
                 jogador.listarDados(); 
             }
             
-            System.out.println("* Informe o CPF do jogador*");
+            System.out.printf("* Informe o CPF do jogador para inseri-lo: *");
             linha = ler.nextLine(); // le o cpf do jogador
+            
 
             for( Jogador jogador : jogadores){ 
                 if (linha.equals(jogador.cpf)){ // verifica se o cpf digitado é igual a algum cpf já cadastrado
