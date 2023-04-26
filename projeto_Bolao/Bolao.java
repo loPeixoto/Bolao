@@ -76,9 +76,8 @@ public class Bolao{
 
         divisaoPremio = premio/apostasVencedoras.size();
 
-        
-
-
-
-    }
+        for (Aposta aposta1: apostasVencedoras){
+            aposta1.listarVencedores(divisaoPremio);
+        }
+    }
 }
