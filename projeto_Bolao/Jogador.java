@@ -1,7 +1,7 @@
 package projeto_Bolao;
 
 import java.util.Scanner;
-
+//.
 public class Jogador extends Pessoa {
     protected String pix;
 
