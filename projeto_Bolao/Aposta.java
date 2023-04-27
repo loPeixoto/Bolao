@@ -34,6 +34,10 @@ public class Aposta {
         }
     }
 
+    public void listarVencedores (double premio) {
+
+    }
+
     public boolean verificaNumeros(int numero){
        
 
@@ -43,10 +47,6 @@ public class Aposta {
             }
         }
         return false;
-    }
-    
-    public void listarVencedores (double premio){
-
     }
 
     public void inserirNumeros() {
