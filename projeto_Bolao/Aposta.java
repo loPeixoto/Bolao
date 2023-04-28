@@ -11,7 +11,7 @@ public class Aposta {
 
     public Aposta(){
         this.numeros = new ArrayList<Integer>();
-        this.organizador = new Jogador();
+        //this.organizador = new Jogador(); não adiciona o jogador de inicio
         // nao inicializei o organizador
         this.jogadores = new ArrayList<Jogador>();
     }
@@ -92,7 +92,12 @@ public class Aposta {
                 this.organizador = jogador;
             }
         }
-
+        System.out.println();
+        System.out.println("DADOS DO ORGANIZADOR");
+        System.out.println("  Nome: " + this.organizador.nome);
+        System.out.println("  CPF: " + this.organizador.cpf);
+        System.out.println("  PIX: " + this.organizador.pix);
+        System.out.println();
         // falta verificar se o cpf é valido e oq vai fazer se nao 
         // achar algum cpf na lista
     }
@@ -104,21 +109,21 @@ public class Aposta {
         System.out.println("* inserir Jogadores : Digite o numero de jogadores do bilhete (sem contar o organizador) *");
         j = ler.nextInt();
 
-        for (int i = 1; i <= j; i++) {
+        for (int i = 0; i < j; i++) {
             for( Jogador jogador : jogadores){ // lista os dados de todos os jogadores
                 jogador.listarDados(); 
             }
-            
-            System.out.printf("* Informe o CPF do jogador para inseri-lo: *");
-            linha = ler.nextLine(); // le o cpf do jogador
+        } 
+        System.out.printf("* Informe o CPF do jogador para inseri-lo: *");
+        linha = ler.nextLine(); // le o cpf do jogador
             
 
-            for( Jogador jogador : jogadores){ 
-                if (linha.equals(jogador.cpf)){ // verifica se o cpf digitado é igual a algum cpf já cadastrado
-                    this.jogadores.add(jogador);
-                }
+        for( Jogador jogador : jogadores){ 
+            if (linha.equals(jogador.cpf)){ // verifica se o cpf digitado é igual a algum cpf já cadastrado
+                this.jogadores.add(jogador);
             }
         }
+        
         System.out.println(" jogadores cadastrados ");
     }
 }
