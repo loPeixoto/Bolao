@@ -62,7 +62,7 @@ public class Bolao{
         Scanner r = new Scanner(System.in);
         
 
-        while(numSorteados.size() < 7) {
+        while(numSorteados.size() < 6) {
 
             System.out.println(" Digite o " + i + " numero sorteado: ");
            
@@ -81,8 +81,10 @@ public class Bolao{
         apostasVencedoras = vencedoras(numSorteados);
 
         divisaoPremio = premio/apostasVencedoras.size();
-
+        int i2=1;
         for (Aposta aposta1: apostasVencedoras){
+            System.out.println(" Aposta de numero:  " + i2);
+            System.out.println();
             aposta1.listarVencedores(divisaoPremio);
         }
        

@@ -8,7 +8,6 @@ public class Menu {
     public static int lerOpcao(){
         /* le a opcao digitada e retorna ela */
         Scanner ler = new Scanner(System.in); 
-        //ler.close();       
         return ler.nextInt();      
     } 
 

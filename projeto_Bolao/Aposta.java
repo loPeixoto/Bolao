@@ -11,8 +11,6 @@ public class Aposta {
 
     public Aposta(){
         this.numeros = new ArrayList<Integer>();
-        //this.organizador = new Jogador(); não adiciona o jogador de inicio
-        // nao inicializei o organizador
         this.jogadores = new ArrayList<Jogador>();
     }
     
@@ -49,8 +47,8 @@ public class Aposta {
         premioOrg = (premio - (premio*0.1))/(this.jogadores.size()+1) + premio*0.1;
         premioJog = (premio - (premio*0.1))/(this.jogadores.size()+1);
 
-        System.out.println("Premiaçao para o(os) organizador(es): " + premioOrg);
-        System.out.println("Premiação para o(os) jogador(es): " + premioJog);
+        System.out.printf("Premiaçao para o(os) organizador(es): %.2f \n", premioOrg);
+        System.out.printf("Premiação para o(os) jogador(es): %.2f \n", premioJog);
         System.out.println();
     }
 
@@ -69,9 +67,18 @@ public class Aposta {
         int cont = 1 , aux, q;
 
         Scanner ler = new Scanner(System.in);
-        System.out.println("***  Digite a quantidade de números da aposta ***");
-        // precisa de validação pra ser no minimo 6 e no maximo 8
+        System.out.println("***  Digite a quantidade de números da aposta <de 6 a 8>***");
+
         q = ler.nextInt();
+
+        if(q < 6 || q > 8) {
+            while(q < 6 || q > 8) {
+                System.out.println();
+                System.out.println("Erro: por favor, digite um número de 6 a 8");
+                q = ler.nextInt();
+                System.out.println();
+            }
+        }
 
         this.numeros = new ArrayList<Integer>();
 
@@ -106,16 +113,17 @@ public class Aposta {
         for( Jogador jogador : j){ 
             if (i.equals(jogador.cpf)){ // verifica se o cpf digitado é igual a algum cpf já cadastrado
                 this.organizador = jogador;
+            } else{
+                System.out.println(" NENHUM JOGADOR COM ESTE CPF ENCONTRADO");
+                System.out.println(" Adicionando o primeiro jogador da lista como Organizador");
+                Jogador primeiroOrganizador = j.get(0);
+                primeiroOrganizador.listarDados();
+                this.organizador = primeiroOrganizador;
             }
         }
         System.out.println();
         System.out.println("DADOS DO ORGANIZADOR");
-        System.out.println("  Nome: " + this.organizador.nome);
-        System.out.println("  CPF: " + this.organizador.cpf);
-        System.out.println("  PIX: " + this.organizador.pix);
-        
-        // falta verificar se o cpf é valido e oq vai fazer se nao 
-        // achar algum cpf na lista
+        this.organizador.listarDados();
     }
 
     public void inserirJogadores(ArrayList<Jogador> jogadores){
@@ -124,6 +132,8 @@ public class Aposta {
         Scanner read = new Scanner(System.in);
         System.out.println("*  Digite o numero de jogadores do bilhete (sem contar o organizador) *");
         j = read.nextInt();
+        read.nextLine();
+    
 
         for( Jogador jogador : jogadores){ // lista os dados de todos os jogadores
             System.out.println();
@@ -133,14 +143,20 @@ public class Aposta {
 
         while ( i < j) {
             System.out.println("* Informe o CPF do jogador para inseri-lo na aposta: *");
-            linha = read.nextLine(); 
+            linha = read.nextLine(); // le o cpf do jogador
 
             for(Jogador jogador : jogadores){ 
                 if (linha.equals(jogador.cpf)){ // verifica se o cpf digitado é igual a algum cpf já cadastrado
                     this.jogadores.add(jogador);
                     i++;
                 } else{
-                    //System.out.println(" ERRO Digite um CPF que esteja na lista\n");
+                    System.out.println();
+                    System.out.println(" NENHUM JOGADOR COM ESTE CPF ENCONTRADO");
+                    System.out.println(" Adicionando o primeiro jogador da lista como jogador");
+                    System.out.println();
+                    Jogador primeiroJogador = jogadores.get(0);
+                    primeiroJogador.listarDados();
+                    this.jogadores.add(primeiroJogador);
                 }
             }
         }
