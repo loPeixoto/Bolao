@@ -116,7 +116,6 @@ public class Aposta {
             System.out.println();
         }
 
-
         while ( i < j) {
             System.out.println("* Informe o CPF do jogador para inseri-lo: *");
             linha = read.nextLine(); // le o cpf do jogador
@@ -130,6 +129,8 @@ public class Aposta {
                 }
             }
         }
+        System.out.println();
+        System.out.println();
         System.out.println(" jogadores cadastrados ");
     }
 }
