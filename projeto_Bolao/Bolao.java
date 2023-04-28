@@ -59,7 +59,7 @@ public class Bolao{
         Scanner r = new Scanner(System.in);
 
 
-        while(numSorteados.size() < 7) {
+        while(numSorteados.size() < 6) {
 
             System.out.println(" Digite o " + i + "o sorteado: ");
            
