@@ -59,8 +59,8 @@ public class Aposta {
 
         this.numeros = new ArrayList<Integer>();
 
-        while(numeros.size() <= q) {
-            System.out.println(" Digite o " + cont + "numero da aposta");
+        while(numeros.size() < q) {
+            System.out.println(" Digite o " + cont + " numero da aposta");
             aux = ler.nextInt();
             if(aux <= 0 || aux > 60) {
                 System.out.println("Erro: digite um número válido de 1 a 60");
@@ -103,27 +103,31 @@ public class Aposta {
     }
 
     public void inserirJogadores(){
-        int j;
+        int j, i = 0;
         String linha;
         Scanner ler = new Scanner(System.in);
         System.out.println("* inserir Jogadores : Digite o numero de jogadores do bilhete (sem contar o organizador) *");
         j = ler.nextInt();
 
-        for (int i = 0; i < j; i++) {
+        while ( i < j) {
             for( Jogador jogador : jogadores){ // lista os dados de todos os jogadores
                 jogador.listarDados(); 
+                System.out.println();
+                System.out.println("listando dados dos jogadores com listarDados()");
+                System.out.println();
             }
-        } 
-        System.out.printf("* Informe o CPF do jogador para inseri-lo: *");
-        linha = ler.nextLine(); // le o cpf do jogador
-            
+         
+            System.out.printf("* Informe o CPF do jogador para inseri-lo: *");
+            linha = ler.nextLine(); // le o cpf do jogador
+                
 
-        for( Jogador jogador : jogadores){ 
-            if (linha.equals(jogador.cpf)){ // verifica se o cpf digitado é igual a algum cpf já cadastrado
-                this.jogadores.add(jogador);
+            for( Jogador jogador : jogadores){ 
+                if (linha.equals(jogador.cpf)){ // verifica se o cpf digitado é igual a algum cpf já cadastrado
+                    this.jogadores.add(jogador);
+                }
             }
+        i++;
         }
-        
         System.out.println(" jogadores cadastrados ");
     }
 }
