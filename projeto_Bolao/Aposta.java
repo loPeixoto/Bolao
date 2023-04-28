@@ -37,7 +37,7 @@ public class Aposta {
     public void listarVencedores(double premio) {
         double premioOrg, premioJog;
 
-        System.out.println("**VENCEDORES**");
+        System.out.println("** VENCEDORES **");
 
         this.organizador.listarDados();
         System.out.println();
@@ -100,7 +100,7 @@ public class Aposta {
         }
 
         Scanner ler = new Scanner(System.in);
-        System.out.println("*inserirOrganizador Digite o cpf do jogador que sera o organizador da aposta *");
+        System.out.println("*Digite o cpf do jogador que sera o organizador da aposta *");
         i = ler.nextLine();
 
         for( Jogador jogador : j){ 
@@ -113,7 +113,7 @@ public class Aposta {
         System.out.println("  Nome: " + this.organizador.nome);
         System.out.println("  CPF: " + this.organizador.cpf);
         System.out.println("  PIX: " + this.organizador.pix);
-        System.out.println();
+        
         // falta verificar se o cpf é valido e oq vai fazer se nao 
         // achar algum cpf na lista
     }
@@ -122,7 +122,7 @@ public class Aposta {
         int j, i = 0;
         String linha;
         Scanner read = new Scanner(System.in);
-        System.out.println("* inserir Jogadores : Digite o numero de jogadores do bilhete (sem contar o organizador) *");
+        System.out.println("*  Digite o numero de jogadores do bilhete (sem contar o organizador) *");
         j = read.nextInt();
 
         for( Jogador jogador : jogadores){ // lista os dados de todos os jogadores
@@ -132,8 +132,8 @@ public class Aposta {
         }
 
         while ( i < j) {
-            System.out.println("* Informe o CPF do jogador para inseri-lo: *");
-            linha = read.nextLine(); // le o cpf do jogador
+            System.out.println("* Informe o CPF do jogador para inseri-lo na aposta: *");
+            linha = read.nextLine(); 
 
             for(Jogador jogador : jogadores){ 
                 if (linha.equals(jogador.cpf)){ // verifica se o cpf digitado é igual a algum cpf já cadastrado
@@ -147,5 +147,6 @@ public class Aposta {
         System.out.println();
         System.out.println();
         System.out.println(" jogadores cadastrados ");
+        System.out.println();
     }
 }

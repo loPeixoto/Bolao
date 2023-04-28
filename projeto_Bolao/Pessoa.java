@@ -9,11 +9,12 @@ public class Pessoa {
     public Pessoa() {
         Scanner r = new Scanner(System.in);
 
-        System.out.println("Digite o nome: ");
+        System.out.printf("Digite o nome: ");
         this.nome = r.nextLine();
 
-        System.out.println("Digite o CPF: ");
+        System.out.printf("Digite o CPF: ");
         this.cpf = r.nextLine();
+
     }
 
     public String getNome() {
@@ -25,9 +26,10 @@ public class Pessoa {
     }
 
     public void listarDados() {
-        System.out.println("*** Dados da Pessoa ***");
-        System.out.println("Nome: " + this.getNome());
-        System.out.println("CPF: " + this.getCPF());
+        System.out.println("*** DADOS DA PESSOA ***");
+        System.out.println("   Nome: " + this.getNome());
+        System.out.println("   CPF: " + this.getCPF());
+        
     }
     
 }

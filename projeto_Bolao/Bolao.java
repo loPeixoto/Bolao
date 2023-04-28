@@ -18,8 +18,9 @@ public class Bolao{
     }
 
     public void cadastrarJogadores() {
-        System.out.println("Digite os dados do jogador \n");
+        System.out.println();
         System.out.println(" -----------------------------");
+        System.out.println("Digite os dados do jogador \n");
         Jogador j = new Jogador();
         this.jogadores.add(j);
         System.out.println(" -----------------------------");
@@ -32,6 +33,7 @@ public class Bolao{
         aposta1.inserirNumeros();
         this.getAposta().add(aposta1);
         System.out.println("Aposta criada");
+        System.out.println();
     }
 
 
@@ -51,21 +53,21 @@ public class Bolao{
 
     public void inserirSorteio() {
         int aux= 1;
-        int i = 0;
+        int i = 1;
         double premio;
         double divisaoPremio;
         
         ArrayList<Integer> numSorteados = new ArrayList<Integer>();
         ArrayList<Aposta> apostasVencedoras = new ArrayList<Aposta>();
         Scanner r = new Scanner(System.in);
+        
 
-
-        while(numSorteados.size() < 6) {
+        while(numSorteados.size() < 7) {
 
             System.out.println(" Digite o " + i + " numero sorteado: ");
            
             if(aux <= 0 || aux > 60) {
-                System.out.println("Erro: digite um número válido de 1 a 60");
+                System.out.println(" ERRO digite um número válido de 1 a 60");
             }else {
                 aux = r.nextInt();
                 numSorteados.add(aux);
@@ -73,7 +75,7 @@ public class Bolao{
             }
         }
 
-        System.out.println("Digite qual será o valor da premiação");
+        System.out.println("Digite qual será o valor da premiação: ");
         premio = r.nextDouble();
 
         apostasVencedoras = vencedoras(numSorteados);
@@ -83,6 +85,7 @@ public class Bolao{
         for (Aposta aposta1: apostasVencedoras){
             aposta1.listarVencedores(divisaoPremio);
         }
+       
     }
 
 }

@@ -16,6 +16,7 @@ public class Jogador extends Pessoa {
 
     public void listarDados(){
         super.listarDados();
-        System.out.println("PIX: " + this.pix);
+        System.out.println("   PIX: " + this.pix);
+        System.out.println();
     }    
 }
