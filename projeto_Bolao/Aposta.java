@@ -21,28 +21,37 @@ public class Aposta {
     public boolean vencedora(ArrayList<Integer> NumApostados) {
         int i = 0;
 
-        for(Integer numSorteado : NumApostados){ 
+        for(int numSorteado : NumApostados){ 
             if (verificaNumeros(numSorteado)){ 
                 i++;
             }
         }
 
-        if ( i >= 6){
+        if ( i == 6){
             return true;
         } else {
             return false;
         }
     }
 
-    public void listarVencedores (double premio) {
+    public void listarVencedores(double premio) {
+        System.out.println("**VENCEDORES**");
 
+        this.organizador.listarDados();
+        System.out.println();
 
+        for(Jogador j : this.jogadores) {
+            j.listarDados();
+            System.out.println();
+        }
+
+        System.out.println("Premiação para cada ganhador: " + premio);
     }
 
     public boolean verificaNumeros(int numero){
        
 
-        for (int num : this.getNumeros()){
+        for (Integer num : this.getNumeros()){
             if (num == numero){
                 return true;
             }

@@ -30,6 +30,7 @@ public class Bolao{
         aposta1.inserirOrganizador(jogadores);
         aposta1.inserirJogadores(jogadores);
         aposta1.inserirNumeros();
+        this.getAposta().add(aposta1);
         System.out.println("Aposta criada");
     }
 
