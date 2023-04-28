@@ -35,6 +35,8 @@ public class Aposta {
     }
 
     public void listarVencedores(double premio) {
+        double premioOrg, premioJog;
+
         System.out.println("**VENCEDORES**");
 
         this.organizador.listarDados();
@@ -44,8 +46,12 @@ public class Aposta {
             j.listarDados();
             System.out.println();
         }
+        premioOrg = (premio - (premio*0.1))/(this.jogadores.size()+1) + premio*0.1;
+        premioJog = (premio - (premio*0.1))/(this.jogadores.size()+1);
 
-        System.out.println("Premiação para cada ganhador: " + premio);
+        System.out.println("Premiaçao para o(os) organizador(es): " + premioOrg);
+        System.out.println("Premiação para o(os) jogador(es): " + premioJog);
+        System.out.println();
     }
 
     public boolean verificaNumeros(int numero){
