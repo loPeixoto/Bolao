@@ -20,14 +20,14 @@ public class Pessoa {
         return nome;
     }
 
-    public String getCpf() {
+    public String getCPF() {
         return cpf;
     }
 
     public void listarDados() {
         System.out.println("*** Dados da Pessoa ***");
-        System.out.println("Nome: " + this.nome);
-        System.out.println("CPF: " + this.cpf);
+        System.out.println("Nome: " + this.getNome());
+        System.out.println("CPF: " + this.getCPF());
     }
     
 }
