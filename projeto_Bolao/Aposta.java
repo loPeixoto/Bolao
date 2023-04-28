@@ -36,6 +36,7 @@ public class Aposta {
 
     public void listarVencedores (double premio) {
 
+
     }
 
     public boolean verificaNumeros(int numero){
@@ -105,23 +106,23 @@ public class Aposta {
     public void inserirJogadores(){
         int j, i = 0;
         String linha;
-        Scanner ler = new Scanner(System.in);
+        Scanner read = new Scanner(System.in);
         System.out.println("* inserir Jogadores : Digite o numero de jogadores do bilhete (sem contar o organizador) *");
-        j = ler.nextInt();
+        j = read.nextInt();
 
-        while ( i < j) {
+        while ( i <= j) {
             for( Jogador jogador : jogadores){ // lista os dados de todos os jogadores
-                jogador.listarDados(); 
+                jogador.listarDados();
                 System.out.println();
                 System.out.println("listando dados dos jogadores com listarDados()");
                 System.out.println();
             }
          
             System.out.printf("* Informe o CPF do jogador para inseri-lo: *");
-            linha = ler.nextLine(); // le o cpf do jogador
+            linha = read.nextLine(); // le o cpf do jogador
                 
 
-            for( Jogador jogador : jogadores){ 
+            for(Jogador jogador : jogadores){ 
                 if (linha.equals(jogador.cpf)){ // verifica se o cpf digitado é igual a algum cpf já cadastrado
                     this.jogadores.add(jogador);
                 }
