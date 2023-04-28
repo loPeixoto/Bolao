@@ -103,31 +103,32 @@ public class Aposta {
         // achar algum cpf na lista
     }
 
-    public void inserirJogadores(){
+    public void inserirJogadores(ArrayList<Jogador> jogadores){
         int j, i = 0;
         String linha;
         Scanner read = new Scanner(System.in);
         System.out.println("* inserir Jogadores : Digite o numero de jogadores do bilhete (sem contar o organizador) *");
         j = read.nextInt();
 
-        while ( i <= j) {
-            for( Jogador jogador : jogadores){ // lista os dados de todos os jogadores
-                jogador.listarDados();
-                System.out.println();
-                System.out.println("listando dados dos jogadores com listarDados()");
-                System.out.println();
-            }
-         
-            System.out.printf("* Informe o CPF do jogador para inseri-lo: *");
+        for( Jogador jogador : jogadores){ // lista os dados de todos os jogadores
+            System.out.println();
+            jogador.listarDados();
+            System.out.println();
+        }
+
+
+        while ( i < j) {
+            System.out.println("* Informe o CPF do jogador para inseri-lo: *");
             linha = read.nextLine(); // le o cpf do jogador
-                
 
             for(Jogador jogador : jogadores){ 
                 if (linha.equals(jogador.cpf)){ // verifica se o cpf digitado é igual a algum cpf já cadastrado
                     this.jogadores.add(jogador);
+                    i++;
+                } else{
+                    //System.out.println(" ERRO Digite um CPF que esteja na lista\n");
                 }
             }
-        i++;
         }
         System.out.println(" jogadores cadastrados ");
     }

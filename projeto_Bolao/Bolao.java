@@ -28,7 +28,7 @@ public class Bolao{
     public void cadastrarAposta() {
         Aposta aposta1 = new Aposta();
         aposta1.inserirOrganizador(jogadores);
-        aposta1.inserirJogadores();
+        aposta1.inserirJogadores(jogadores);
         aposta1.inserirNumeros();
         System.out.println("Aposta criada");
     }
@@ -61,7 +61,7 @@ public class Bolao{
 
         while(numSorteados.size() < 6) {
 
-            System.out.println(" Digite o " + i + "o sorteado: ");
+            System.out.println(" Digite o " + i + " numero sorteado: ");
            
             if(aux <= 0 || aux > 60) {
                 System.out.println("Erro: digite um número válido de 1 a 60");
