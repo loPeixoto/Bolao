@@ -18,13 +18,16 @@ public class Bolao{
     }
 
     public void cadastrarJogadores() {
-        System.out.println("Digite os dados do jogador");
+        System.out.println("Digite os dados do jogador \n");
+        System.out.println(" -----------------------------");
         Jogador j = new Jogador();
         this.jogadores.add(j);
+        System.out.println(" -----------------------------");
     }
 
     public void cadastrarAposta() {
         Aposta aposta1 = new Aposta();
+        aposta1.inserirOrganizador(jogadores);
         aposta1.inserirJogadores();
         aposta1.inserirNumeros();
         System.out.println("Aposta criada");
