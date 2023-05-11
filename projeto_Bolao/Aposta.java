@@ -132,7 +132,7 @@ public class Aposta {
 
     public void inserirJogadores(ArrayList<Jogador> jog){
         int j, i = 0;
-        boolean confirma = false;
+        boolean confirma;
         String linha;
         Scanner read = new Scanner(System.in);
         System.out.println("*  Digite o numero de jogadores do bilhete (sem contar o organizador) *");
@@ -147,6 +147,7 @@ public class Aposta {
         }
 
         while ( i < j) {
+            confirma = false;
             System.out.println("* Informe o CPF do jogador para inseri-lo na aposta: *");
             linha = read.nextLine(); // le o cpf do jogador
 
@@ -157,20 +158,16 @@ public class Aposta {
                     i++;
                 }
             }
+            if(confirma == false) {
+                System.out.println();
+                System.out.println(" NENHUM JOGADOR COM ESTE CPF ENCONTRADO");
+                System.out.println(" Adicionando o primeiro jogador da lista como jogador");
+                System.out.println();
+                Jogador primeiroJogador = jogadores.get(0);
+                primeiroJogador.listarDados();
+                this.jogadores.add(primeiroJogador);
+            }
         }
-
-        if(confirma == false) {
-            System.out.println();
-            System.out.println(" NENHUM JOGADOR COM ESTE CPF ENCONTRADO");
-            System.out.println(" Adicionando o primeiro jogador da lista como jogador");
-            System.out.println();
-            Jogador primeiroJogador = jogadores.get(0);
-            primeiroJogador.listarDados();
-            this.jogadores.add(primeiroJogador);
-
-        }
-
-
 
         System.out.println();
         System.out.println();
