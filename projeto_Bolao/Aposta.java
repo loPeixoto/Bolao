@@ -110,24 +110,29 @@ public class Aposta {
         System.out.println("*Digite o cpf do jogador que sera o organizador da aposta *");
         i = ler.nextLine();
 
-        for( Jogador jogador : j){ 
-            if (i.equals(jogador.cpf)){ // verifica se o cpf digitado é igual a algum cpf já cadastrado
+        for( Jogador jogador : j) { 
+            if (i.equals(jogador.cpf)) { // verifica se o cpf digitado é igual a algum cpf já cadastrado
                 this.organizador = jogador;
-            } else{
-                System.out.println(" NENHUM JOGADOR COM ESTE CPF ENCONTRADO");
-                System.out.println(" Adicionando o primeiro jogador da lista como Organizador");
-                Jogador primeiroOrganizador = j.get(0);
-                primeiroOrganizador.listarDados();
-                this.organizador = primeiroOrganizador;
             }
         }
+
+        if (this.organizador == null) {
+            System.out.println(" NENHUM JOGADOR COM ESTE CPF ENCONTRADO");
+            System.out.println(" Adicionando o primeiro jogador da lista como Organizador");
+            Jogador primeiroOrganizador = j.get(0);
+            primeiroOrganizador.listarDados();
+            this.organizador = primeiroOrganizador;
+        }
+
+
         System.out.println();
         System.out.println("DADOS DO ORGANIZADOR");
         this.organizador.listarDados();
     }
 
-    public void inserirJogadores(ArrayList<Jogador> jogadores){
+    public void inserirJogadores(ArrayList<Jogador> jog){
         int j, i = 0;
+        boolean confirma = false;
         String linha;
         Scanner read = new Scanner(System.in);
         System.out.println("*  Digite o numero de jogadores do bilhete (sem contar o organizador) *");
@@ -135,7 +140,7 @@ public class Aposta {
         read.nextLine();
     
 
-        for( Jogador jogador : jogadores){ // lista os dados de todos os jogadores
+        for( Jogador jogador : jog){ // lista os dados de todos os jogadores
             System.out.println();
             jogador.listarDados();
             System.out.println();
@@ -145,21 +150,28 @@ public class Aposta {
             System.out.println("* Informe o CPF do jogador para inseri-lo na aposta: *");
             linha = read.nextLine(); // le o cpf do jogador
 
-            for(Jogador jogador : jogadores){ 
+            for(Jogador jogador : jog){ 
                 if (linha.equals(jogador.cpf)){ // verifica se o cpf digitado é igual a algum cpf já cadastrado
                     this.jogadores.add(jogador);
+                    confirma = true;
                     i++;
-                } else{
-                    System.out.println();
-                    System.out.println(" NENHUM JOGADOR COM ESTE CPF ENCONTRADO");
-                    System.out.println(" Adicionando o primeiro jogador da lista como jogador");
-                    System.out.println();
-                    Jogador primeiroJogador = jogadores.get(0);
-                    primeiroJogador.listarDados();
-                    this.jogadores.add(primeiroJogador);
                 }
             }
         }
+
+        if(confirma == false) {
+            System.out.println();
+            System.out.println(" NENHUM JOGADOR COM ESTE CPF ENCONTRADO");
+            System.out.println(" Adicionando o primeiro jogador da lista como jogador");
+            System.out.println();
+            Jogador primeiroJogador = jogadores.get(0);
+            primeiroJogador.listarDados();
+            this.jogadores.add(primeiroJogador);
+
+        }
+
+
+
         System.out.println();
         System.out.println();
         System.out.println(" jogadores cadastrados ");

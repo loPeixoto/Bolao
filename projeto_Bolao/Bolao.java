@@ -86,6 +86,7 @@ public class Bolao{
             System.out.println(" Aposta de numero:  " + i2);
             System.out.println();
             aposta1.listarVencedores(divisaoPremio);
+            i2++;
         }
        
     }
